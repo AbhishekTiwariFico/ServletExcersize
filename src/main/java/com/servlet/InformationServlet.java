@@ -27,8 +27,9 @@ public class InformationServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String roll_no = req.getParameter("rollnumber");
+        getServletContext().log(req.getClass().toString());
         PrintWriter out = resp.getWriter();
         Object data = null;
         if(information.containsKey(roll_no))

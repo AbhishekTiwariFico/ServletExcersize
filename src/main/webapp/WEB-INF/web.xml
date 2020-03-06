@@ -5,6 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+
   <filter>
     <filter-name>rollNumber</filter-name>
     <filter-class>com.filter.RollNumberFilter</filter-class>
@@ -30,6 +31,14 @@
     <filter-name>convert</filter-name>
     <url-pattern>/info</url-pattern>
   </filter-mapping>
+
+  <listener>
+    <listener-class>com.Listener.SystemListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>path</param-name>
+    <param-value>C:\GitHub\ServletExcersize\src\main\Property\information.properties</param-value>
+  </context-param>
   <servlet>
     <servlet-name>Information</servlet-name>
     <servlet-class>com.servlet.InformationServlet</servlet-class>
@@ -37,6 +46,15 @@
   <servlet-mapping>
     <servlet-name>Information</servlet-name>
     <url-pattern>/info</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>property</servlet-name>
+    <servlet-class>com.servlet.PropertiesReader</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>property</servlet-name>
+    <url-pattern>/property</url-pattern>
   </servlet-mapping>
 
 </web-app>
